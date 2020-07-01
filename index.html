@@ -140,19 +140,361 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-PAT-1088-Rational-Arithmetic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1102-Invert-a-Binary-Tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/27/PAT-1088-Rational-Arithmetic/">1088 Rational Arithmetic</a>
+      <a class="article-title" href="/2020/07/01/1102-Invert-a-Binary-Tree/">1102 Invert a Binary Tree</a>
     </h1>
   
 
         
-        <a href="/2020/06/27/PAT-1088-Rational-Arithmetic/" class="archive-article-date">
+        <a href="/2020/07/01/1102-Invert-a-Binary-Tree/" class="archive-article-date">
+  	<time datetime="2020-07-01T10:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>The following is from Max Howell @twitter:</p>
+<blockquote>
+<p>Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.</p>
+</blockquote>
+<p>Now it’s your turn to prove that YOU CAN invert a binary tree!</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">binary tree</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tree traversal</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">level order traversal</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">in order traversal</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/1102-Invert-a-Binary-Tree/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1101-Quick-Sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/01/1101-Quick-Sort/">1101 Quick Sort</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/01/1101-Quick-Sort/" class="archive-article-date">
+  	<time datetime="2020-07-01T10:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>There is a classical process named <strong>partition</strong> in the famous quick sort algorithm. In this process we typically choose one element as the pivot. Then the elements less than the pivot are moved to its left and those larger than the pivot to its right. Given $N$ distinct positive integers after a run of partition, could you tell how many elements could be the selected pivot for this partition?</p>
+<p>For example, given $N=5$ and the numbers 1, 3, 2, 4, and 5. We have:</p>
+<ul>
+<li>1 could be the pivot since there is no element to its left and all the elements to its right are larger than it;</li>
+<li>3 must not be the pivot since although all the elements to its left are smaller, the number 2 to its right is less than it as well;</li>
+<li>2 must not be the pivot since although all the elements to its right are larger, the number 3 to its left is larger than it as well;</li>
+<li>and for the similar reason, 4 and 5 could also be the pivot.</li>
+</ul>
+<p>Hence in total there are 3 pivot candidates.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Quick Sort</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/1101-Quick-Sort/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1091-Acute-Stroke" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/01/1091-Acute-Stroke/">1091 Acute Stroke</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/01/1091-Acute-Stroke/" class="archive-article-date">
+  	<time datetime="2020-07-01T10:02:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>One important factor to identify acute stroke (急性脑卒中) is the volume of the stroke core. Given the results of image analysis in which the core regions are identified in each MRI slice, your job is to calculate the volume of the stroke core.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/01/1091-Acute-Stroke/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1090-Highest-Price-in-Supply-Chain" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/30/1090-Highest-Price-in-Supply-Chain/">1090 Highest Price in Supply Chain</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/30/1090-Highest-Price-in-Supply-Chain/" class="archive-article-date">
+  	<time datetime="2020-06-30T11:47:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved in moving a product from supplier to customer.</p>
+<p>Starting from one root supplier, everyone on the chain buys products from one’s supplier in a price <em>P</em> and sell or distribute them in a price that is $r%$ higher than $P$. It is assumed that each member in the supply chain has exactly one supplier except the root supplier, and there is no supply cycle.</p>
+<p>Now given a supply chain, you are supposed to tell the highest price we can expect from some retailers.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/30/1090-Highest-Price-in-Supply-Chain/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1088-Rational-Arithmetic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/27/1088-Rational-Arithmetic/">1088 Rational Arithmetic</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/27/1088-Rational-Arithmetic/" class="archive-article-date">
   	<time datetime="2020-06-27T07:28:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
 </a>
         
@@ -188,7 +530,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/27/PAT-1088-Rational-Arithmetic/">展开 >></a>
+          <a class="article-more-a" href="/2020/06/27/1088-Rational-Arithmetic/">展开 >></a>
         </p>
       
 
@@ -218,19 +560,19 @@
 
 
   
-    <article id="post-PAT-1089-Insert-or-Merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1089-Insert-or-Merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/27/PAT-1089-Insert-or-Merge/">PAT 1089 Insert or Merge</a>
+      <a class="article-title" href="/2020/06/27/1089-Insert-or-Merge/">1089 Insert or Merge</a>
     </h1>
   
 
         
-        <a href="/2020/06/27/PAT-1089-Insert-or-Merge/" class="archive-article-date">
+        <a href="/2020/06/27/1089-Insert-or-Merge/" class="archive-article-date">
   	<time datetime="2020-06-27T06:07:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
 </a>
         
@@ -277,7 +619,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/27/PAT-1089-Insert-or-Merge/">展开 >></a>
+          <a class="article-more-a" href="/2020/06/27/1089-Insert-or-Merge/">展开 >></a>
         </p>
       
 
@@ -421,10 +763,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sort</a>
               </li>
              
@@ -434,6 +772,38 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Merge Sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Arithmetic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Quick Sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">binary tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tree traversal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">level order traversal</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">in order traversal</a>
               </li>
             
             <div class="clearfix"></div>
