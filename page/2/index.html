@@ -140,28 +140,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-1103-Integer-Factorization" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1115-Counting-Nodes-in-a-BST-DFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/04/1103-Integer-Factorization/">1103 Integer Factorization</a>
+      <a class="article-title" href="/2020/07/13/1115-Counting-Nodes-in-a-BST-DFS/">1115-Counting-Nodes-in-a-BST DFS</a>
     </h1>
   
 
         
-        <a href="/2020/07/04/1103-Integer-Factorization/" class="archive-article-date">
-  	<time datetime="2020-07-04T05:02:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+        <a href="/2020/07/13/1115-Counting-Nodes-in-a-BST-DFS/" class="archive-article-date">
+  	<time datetime="2020-07-13T10:46:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>The <em>K</em>−<em>P</em> factorization of a positive integer <em>N</em> is to write <em>N</em> as the sum of the <em>P</em>-th power of <em>K</em> positive integers. You are supposed to write a program to find the <em>K</em>−<em>P</em> factorization of <em>N</em> for any positive integers <em>N</em>, <em>K</em> and <em>P</em>.</p>
-        
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">int</span> maxDepth = <span class="number">0</span>, cnt[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> data, lchild, rchild;</span><br><span class="line">&#125; nodes[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; root, <span class="keyword">const</span> <span class="keyword">int</span>&amp; depth)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(root == <span class="number">-1</span>) <span class="keyword">return</span>;</span><br><span class="line">	cnt[depth]++;</span><br><span class="line">	<span class="keyword">if</span>(depth &gt; maxDepth) maxDepth = depth;</span><br><span class="line">	DFS(nodes[root].lchild, depth + <span class="number">1</span>);</span><br><span class="line">	DFS(nodes[root].rchild, depth + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;nodes[i].data);</span><br><span class="line">		nodes[i].lchild = nodes[i].rchild = <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> root = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(nodes[i].data &lt;= nodes[root].data) &#123;</span><br><span class="line">				<span class="keyword">if</span>(nodes[root].lchild == <span class="number">-1</span>) &#123;</span><br><span class="line">					nodes[root].lchild = i;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> root = nodes[root].lchild;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(nodes[root].rchild == <span class="number">-1</span>) &#123;</span><br><span class="line">					nodes[root].rchild = i;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> root = nodes[root].rchild;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	DFS(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d + %d = %d\n"</span>, cnt[maxDepth], cnt[maxDepth<span class="number">-1</span>], cnt[maxDepth] + cnt[maxDepth<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -188,7 +189,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/04/1103-Integer-Factorization/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/13/1115-Counting-Nodes-in-a-BST-DFS/">展开 >></a>
         </p>
       
 
@@ -218,29 +219,29 @@
 
 
   
-    <article id="post-1104-Sum-of-Number-Segments" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1117-Eddington-Number" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/02/1104-Sum-of-Number-Segments/">1104 Sum of Number Segments</a>
+      <a class="article-title" href="/2020/07/13/1117-Eddington-Number/">1117 Eddington Number</a>
     </h1>
   
 
         
-        <a href="/2020/07/02/1104-Sum-of-Number-Segments/" class="archive-article-date">
-  	<time datetime="2020-07-02T04:13:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
+        <a href="/2020/07/13/1117-Eddington-Number/" class="archive-article-date">
+  	<time datetime="2020-07-13T10:41:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a sequence of positive numbers, a segment is defined to be a consecutive subsequence. For example, given the sequence { 0.1, 0.2, 0.3, 0.4 }, we have 10 segments: (0.1) (0.1, 0.2) (0.1, 0.2, 0.3) (0.1, 0.2, 0.3, 0.4) (0.2) (0.2, 0.3) (0.2, 0.3, 0.4) (0.3) (0.3, 0.4) and (0.4).</p>
-<p>Now given a sequence, you are supposed to find the sum of all the numbers in all the segments. For the previous example, the sum of all the 10 segments is 0.1 + 0.3 + 0.6 + 1.0 + 0.2 + 0.5 + 0.9 + 0.3 + 0.7 + 0.4 = 5.0.</p>
-        
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">100000</span>;</span><br><span class="line"><span class="keyword">int</span> dist[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, ans; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;dist[i]);</span><br><span class="line">	sort(dist, dist + n, greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">	<span class="keyword">for</span>(ans = <span class="number">0</span>; ans &lt; n &amp;&amp; dist[ans] &gt; ans + <span class="number">1</span>; ans++);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -255,10 +256,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -267,7 +264,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/02/1104-Sum-of-Number-Segments/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/13/1117-Eddington-Number/">展开 >></a>
         </p>
       
 
@@ -297,32 +294,29 @@
 
 
   
-    <article id="post-1102-Invert-a-Binary-Tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1116-Come-on-Let-s-C" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/01/1102-Invert-a-Binary-Tree/">1102 Invert a Binary Tree</a>
+      <a class="article-title" href="/2020/07/13/1116-Come-on-Let-s-C/">1116 Come on! Let&#39;s C</a>
     </h1>
   
 
         
-        <a href="/2020/07/01/1102-Invert-a-Binary-Tree/" class="archive-article-date">
-  	<time datetime="2020-07-01T10:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+        <a href="/2020/07/13/1116-Come-on-Let-s-C/" class="archive-article-date">
+  	<time datetime="2020-07-13T10:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>The following is from Max Howell @twitter:</p>
-<blockquote>
-<p>Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.</p>
-</blockquote>
-<p>Now it’s your turn to prove that YOU CAN invert a binary tree!</p>
-        
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">10000</span>;</span><br><span class="line"><span class="keyword">int</span> ranking[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, rt = <span class="built_in">sqrt</span>(n); i &lt;= rt &amp;&amp; flag; i++) flag = (n % i != <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, k; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, id; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;id);</span><br><span class="line">		ranking[id] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, id; i &lt; k; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;id); <span class="built_in">printf</span>(<span class="string">"%04d: "</span>, id);</span><br><span class="line">		<span class="keyword">if</span>(ranking[id] != <span class="number">0</span>) &#123; <span class="comment">// if id exists</span></span><br><span class="line">			<span class="keyword">if</span>(ranking[id] == <span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">"Checked\n"</span>); <span class="comment">// checked</span></span><br><span class="line">			<span class="keyword">else</span> &#123; <span class="comment">// first check</span></span><br><span class="line">				<span class="keyword">if</span>(ranking[id] == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"Mystery Award\n"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(isPrime(ranking[id])) <span class="built_in">printf</span>(<span class="string">"Minion\n"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Chocolate\n"</span>);</span><br><span class="line">				ranking[id] = <span class="number">-1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Are you kidding?\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -337,14 +331,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">level order</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">in order</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -353,7 +339,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/01/1102-Invert-a-Binary-Tree/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/13/1116-Come-on-Let-s-C/">展开 >></a>
         </p>
       
 
@@ -383,118 +369,29 @@
 
 
   
-    <article id="post-1101-Quick-Sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1115-Counting-Nodes-in-a-BST-BFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/01/1101-Quick-Sort/">1101 Quick Sort</a>
+      <a class="article-title" href="/2020/07/13/1115-Counting-Nodes-in-a-BST-BFS/">1115 Counting Nodes in a BST BFS</a>
     </h1>
   
 
         
-        <a href="/2020/07/01/1101-Quick-Sort/" class="archive-article-date">
-  	<time datetime="2020-07-01T10:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+        <a href="/2020/07/13/1115-Counting-Nodes-in-a-BST-BFS/" class="archive-article-date">
+  	<time datetime="2020-07-13T10:41:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>There is a classical process named <strong>partition</strong> in the famous quick sort algorithm. In this process we typically choose one element as the pivot. Then the elements less than the pivot are moved to its left and those larger than the pivot to its right. Given $N$ distinct positive integers after a run of partition, could you tell how many elements could be the selected pivot for this partition?</p>
-<p>For example, given $N=5$ and the numbers 1, 3, 2, 4, and 5. We have:</p>
-<ul>
-<li>1 could be the pivot since there is no element to its left and all the elements to its right are larger than it;</li>
-<li>3 must not be the pivot since although all the elements to its left are smaller, the number 2 to its right is less than it as well;</li>
-<li>2 must not be the pivot since although all the elements to its right are larger, the number 3 to its left is larger than it as well;</li>
-<li>and for the similar reason, 4 and 5 could also be the pivot.</li>
-</ul>
-<p>Hence in total there are 3 pivot candidates.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Quick Sort</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/01/1101-Quick-Sort/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">int</span> cnt[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> data, lchild, rchild;</span><br><span class="line">&#125; nodes[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; root, <span class="keyword">int</span>&amp; depth)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q; depth = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(q.push(root); !q.empty(); depth++) &#123;</span><br><span class="line">		cnt[depth] = q.size();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cnt[depth]; i++, q.pop()) &#123;</span><br><span class="line">			<span class="keyword">const</span> Node&amp; node = nodes[q.front()];</span><br><span class="line">			<span class="keyword">if</span>(node.lchild != <span class="number">-1</span>) q.push(node.lchild);</span><br><span class="line">			<span class="keyword">if</span>(node.rchild != <span class="number">-1</span>) q.push(node.rchild);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	depth--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, maxDepth; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;nodes[i].data);</span><br><span class="line">		nodes[i].lchild = nodes[i].rchild = <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> root = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(nodes[i].data &lt;= nodes[root].data) &#123;</span><br><span class="line">				<span class="keyword">if</span>(nodes[root].lchild == <span class="number">-1</span>) &#123;</span><br><span class="line">					nodes[root].lchild = i;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> root = nodes[root].lchild;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(nodes[root].rchild == <span class="number">-1</span>) &#123;</span><br><span class="line">					nodes[root].rchild = i;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> root = nodes[root].rchild;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	BFS(<span class="number">0</span>, maxDepth);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d + %d = %d\n"</span>, cnt[maxDepth], cnt[maxDepth<span class="number">-1</span>], cnt[maxDepth] + cnt[maxDepth<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-
-
-  
-    <article id="post-1091-Acute-Stroke" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/01/1091-Acute-Stroke/">1091 Acute Stroke</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/01/1091-Acute-Stroke/" class="archive-article-date">
-  	<time datetime="2020-07-01T10:02:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>One important factor to identify acute stroke (急性脑卒中) is the volume of the stroke core. Given the results of image analysis in which the core regions are identified in each MRI slice, your job is to calculate the volume of the stroke core.</p>
-        
       
 
       
@@ -521,7 +418,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/01/1091-Acute-Stroke/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/13/1115-Counting-Nodes-in-a-BST-BFS/">展开 >></a>
         </p>
       
 
@@ -551,30 +448,29 @@
 
 
   
-    <article id="post-1090-Highest-Price-in-Supply-Chain" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1114 Family Property" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/30/1090-Highest-Price-in-Supply-Chain/">1090 Highest Price in Supply Chain</a>
+      <a class="article-title" href="/2020/07/13/1114%20Family%20Property/">1114 Family Property</a>
     </h1>
   
 
         
-        <a href="/2020/06/30/1090-Highest-Price-in-Supply-Chain/" class="archive-article-date">
-  	<time datetime="2020-06-30T11:47:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
+        <a href="/2020/07/13/1114%20Family%20Property/" class="archive-article-date">
+  	<time datetime="2020-07-13T10:41:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved in moving a product from supplier to customer.</p>
-<p>Starting from one root supplier, everyone on the chain buys products from one’s supplier in a price <em>P</em> and sell or distribute them in a price that is $r%$ higher than $P$. It is assumed that each member in the supply chain has exactly one supplier except the root supplier, and there is no supply cycle.</p>
-<p>Now given a supply chain, you are supposed to tell the highest price we can expect from some retailers.</p>
-        
+        <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">1000</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Person</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> id, dad, mom, sets, area;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; kids;</span><br><span class="line">&#125; persons[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Answer</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> id, m;</span><br><span class="line">	<span class="keyword">double</span> sets, area;</span><br><span class="line">&#125; answers[MAXN];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; parent, mp;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (parent[x] == parent[parent[x]]) <span class="keyword">return</span> parent[x];</span><br><span class="line">	<span class="keyword">int</span> root; <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;</span><br><span class="line">	<span class="keyword">for</span> (root = x; root != parent[root]; root = parent[root]) path.push_back(root);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">int</span>&amp; node : path) parent[node] = root;</span><br><span class="line">	<span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; a, <span class="keyword">const</span> <span class="keyword">int</span>&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == <span class="number">-1</span> || b == <span class="number">-1</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> roota = Find(a);</span><br><span class="line">	<span class="keyword">int</span> rootb = Find(b);</span><br><span class="line">	<span class="keyword">if</span> (roota != rootb) parent[rootb] = parent[roota];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, cnt = <span class="number">0</span>; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, k; i &lt; n; i++) &#123;</span><br><span class="line">		Person&amp; p = persons[i];</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;p.id, &amp;p.dad, &amp;p.mom, &amp;k);</span><br><span class="line">		parent[p.id] = p.id;</span><br><span class="line">		<span class="keyword">if</span>(p.dad != <span class="number">-1</span>) parent[p.dad] = p.dad;</span><br><span class="line">		<span class="keyword">if</span>(p.mom != <span class="number">-1</span>) parent[p.mom] = p.mom;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, kid; j &lt; k; j++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;kid);</span><br><span class="line">			parent[kid] = kid;</span><br><span class="line">			p.kids.push_back(kid);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;p.sets, &amp;p.area);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">const</span> Person&amp; p = persons[i];</span><br><span class="line">		Union(p.id, p.dad);</span><br><span class="line">		Union(p.id, p.mom);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">int</span>&amp; kid : p.kids) Union(p.id, kid);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : parent) &#123;</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">int</span> root = Find(kv.first);</span><br><span class="line">		<span class="keyword">if</span> (!mp.count(root)) &#123;</span><br><span class="line">			answers[cnt].id = kv.first;</span><br><span class="line">			mp[root] = cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (kv.first &lt; answers[mp[root]].id) answers[mp[root]].id = kv.first;</span><br><span class="line">		answers[mp[root]].m++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="keyword">const</span> Person&amp; p = persons[i];</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">int</span> root = Find(p.id);</span><br><span class="line">		answers[mp[root]].sets += p.sets;</span><br><span class="line">		answers[mp[root]].area += p.area;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cnt; i++) &#123;</span><br><span class="line">		Answer&amp; ans = answers[i];</span><br><span class="line">		ans.sets /= ans.m;</span><br><span class="line">		ans.area /= ans.m;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(answers, answers + n, [](<span class="keyword">const</span> Answer&amp; a, <span class="keyword">const</span> Answer&amp; b) &#123;<span class="keyword">return</span> a.area != b.area ? a.area &gt; b.area : a.id &lt; b.id; &#125;);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, cnt);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cnt; i++) &#123;</span><br><span class="line">		<span class="keyword">const</span> Answer&amp; ans = answers[i];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%04d %d %.3f %.3f\n"</span>, ans.id, ans.m, ans.sets, ans.area);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -591,7 +487,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Union Find</a>
         		</li>
       		
 		</ul>
@@ -601,7 +497,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/30/1090-Highest-Price-in-Supply-Chain/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/13/1114%20Family%20Property/">展开 >></a>
         </p>
       
 
@@ -631,108 +527,27 @@
 
 
   
-    <article id="post-1088-Rational-Arithmetic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1113-Integer-Set-Partition" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/27/1088-Rational-Arithmetic/">1088 Rational Arithmetic</a>
+      <a class="article-title" href="/2020/07/11/1113-Integer-Set-Partition/">1113 Integer Set Partition</a>
     </h1>
   
 
         
-        <a href="/2020/06/27/1088-Rational-Arithmetic/" class="archive-article-date">
-  	<time datetime="2020-06-27T07:28:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
+        <a href="/2020/07/11/1113-Integer-Set-Partition/" class="archive-article-date">
+  	<time datetime="2020-07-11T07:17:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>For two rational numbers, your task is to implement the basic arithmetic, that is, to calculate their sum, difference, product and quotient.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/27/1088-Rational-Arithmetic/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1089-Insert-or-Merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/27/1089-Insert-or-Merge/">1089 Insert or Merge</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/27/1089-Insert-or-Merge/" class="archive-article-date">
-  	<time datetime="2020-06-27T06:07:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>According to Wikipedia:</p>
-<p><strong>Insertion sort</strong> iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.</p>
-<p><strong>Merge sort</strong> works as follows: Divide the unsorted list into N sublists, each containing 1 element (a list of 1 element is considered sorted). Then repeatedly merge two adjacent sublists to produce new sorted sublists until there is only 1 sublist remaining.</p>
-<p>Now given the initial sequence of integers, together with a sequence which is a result of several iterations of some sorting method, can you tell which sorting method we are using?</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a set of <strong><em>N</em></strong> (&gt;1) positive integers, you are supposed to partition them into two disjoint sets $A_1$ and $A_2$ of $n_1$ and $n_2$ numbers, respectively. Let $S_1$ and $S_2$ denote the sums of all the numbers in $A_1$ and $A_2$, respectively. You are supposed to make the partition so that $∣n_1 - n_2∣$ is minimized first, and then  $∣S_1−S_2∣$ is maximized.</p>
         
       
 
@@ -752,13 +567,85 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
         		</li>
-      		 
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/11/1113-Integer-Set-Partition/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1112-Stucked-Keyboard" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/11/1112-Stucked-Keyboard/">1112 Stucked Keyboard</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/11/1112-Stucked-Keyboard/" class="archive-article-date">
+  	<time datetime="2020-07-11T06:17:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>On a broken keyboard, some of the keys are always stuck. So when you type some sentences, the characters corresponding to those keys will appear repeatedly on screen for <em>k</em> times.</p>
+<p>Now given a resulting string on screen, you are supposed to list all the possible stuck keys, and the original string.</p>
+<p>Notice that there might be some characters that are typed repeatedly. The stuck key will always repeat output for a fixed <em>k</em> times whenever it is pressed. For example, when <strong><em>k</em></strong>=3, from the string <code>thiiis iiisss a teeeeeest</code> we know that the keys <code>i</code> and <code>e</code> might be stuck, but <code>s</code> is not even though it appears repeatedly sometimes. The original string could be <code>this isss a teest</code>.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Insert Sort</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Merge Sort</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">string</a>
         		</li>
       		
 		</ul>
@@ -768,7 +655,253 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/27/1089-Insert-or-Merge/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/11/1112-Stucked-Keyboard/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1111-Online-Map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/1111-Online-Map/">1111 Online Map</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/10/1111-Online-Map/" class="archive-article-date">
+  	<time datetime="2020-07-10T07:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Input our current position and a destination, an online map can recommend several paths. Now your job is to recommend two paths to your user: one is the shortest, and the other is the fastest. It is guaranteed that a path exists for any request.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/10/1111-Online-Map/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1110-Complete-Binary-Tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/1110-Complete-Binary-Tree/">1110 Complete Binary Tree</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/10/1110-Complete-Binary-Tree/" class="archive-article-date">
+  	<time datetime="2020-07-10T07:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a tree, you are supposed to tell if it is a complete binary tree.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tree</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BST</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/10/1110-Complete-Binary-Tree/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1109-Group-Photo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/1109-Group-Photo/">1109 Group Photo</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/10/1109-Group-Photo/" class="archive-article-date">
+  	<time datetime="2020-07-10T07:39:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Formation is very important when taking a group photo. Given the rules of forming <strong><em>K</em></strong> rows with <strong><em>N</em></strong> people as the following:</p>
+<ul>
+<li>The number of people in each row must be <em>N</em>/<em>K</em> (round down to the nearest integer), with all the extra people (if any) standing in the last row;</li>
+<li>All the people in the rear row must be no shorter than anyone standing in the front rows;</li>
+<li>In each row, the tallest one stands at the central position (which is defined to be the position (<em>m</em>/2+1), where <em>m</em> is the total number of people in that row, and the division result must be rounded down to the nearest integer);</li>
+<li>In each row, other people must enter the row in non-increasing order of their heights, alternately taking their positions first to the right and then to the left of the tallest one (For example, given five people with their heights 190, 188, 186, 175, and 170, the final formation would be 175, 188, 190, 186, and 170. Here we assume that you are facing the group so your left-hand side is the right-hand side of the one at the central position.);</li>
+<li>When there are many people having the same height, they must be ordered in alphabetical (increasing) order of their names, and it is guaranteed that there is no duplication of names.</li>
+</ul>
+<p>Now given the information of a group of people, you are supposed to write a program to output their formation.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/10/1109-Group-Photo/">展开 >></a>
         </p>
       
 
@@ -800,7 +933,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">« Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">« Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next »</a>
     </nav>
   
 
@@ -920,6 +1053,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sort</a>
               </li>
              
@@ -932,23 +1073,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Quick Sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">level order</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">in order</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Quick Sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -960,15 +1097,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BST</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Dijkstra</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BST</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pre order</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">post order</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AVL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">complete tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
             
             <div class="clearfix"></div>

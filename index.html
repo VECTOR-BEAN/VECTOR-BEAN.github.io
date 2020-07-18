@@ -140,27 +140,28 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-1113-Integer-Set-Partition" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1127-ZigZagging-on-a-Tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/1113-Integer-Set-Partition/">1113 Integer Set Partition</a>
+      <a class="article-title" href="/2020/07/18/1127-ZigZagging-on-a-Tree/">1127 Zigzagging on a Tree</a>
     </h1>
   
 
         
-        <a href="/2020/07/11/1113-Integer-Set-Partition/" class="archive-article-date">
-  	<time datetime="2020-07-11T07:17:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
+        <a href="/2020/07/18/1127-ZigZagging-on-a-Tree/" class="archive-article-date">
+  	<time datetime="2020-07-18T07:49:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a set of <strong><em>N</em></strong> (&gt;1) positive integers, you are supposed to partition them into two disjoint sets $A_1$ and $A_2$ of $n_1$ and $n_2$ numbers, respectively. Let $S_1$ and $S_2$ denote the sums of all the numbers in $A_1$ and $A_2$, respectively. You are supposed to make the partition so that $∣n_1 - n_2∣$ is minimized first, and then  $∣S_1−S_2∣$ is maximized.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences. And it is a simple standard routine to print the numbers in level-order. However, if you think the problem is too simple, then you are too naïve. This time you are supposed to print the numbers in “zigzagging order” – that is, starting from the root, print the numbers level-by-level, alternating between left to right and right to left. For example, for the following tree you must output: 1 11 5 8 17 12 20 15.</p>
+<p><img src="https://images.ptausercontent.com/337cbfb0-a7b2-4500-9664-318e9ffc870e.jpg" alt="zigzag.jpg"></p>
         
       
 
@@ -178,7 +179,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tree</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">in order</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">post order</a>
         		</li>
       		
 		</ul>
@@ -188,7 +197,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/11/1113-Integer-Set-Partition/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/18/1127-ZigZagging-on-a-Tree/">展开 >></a>
         </p>
       
 
@@ -218,29 +227,28 @@
 
 
   
-    <article id="post-1112-Stucked-Keyboard" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1126-Eulerian-Path" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/1112-Stucked-Keyboard/">1112 Stucked Keyboard</a>
+      <a class="article-title" href="/2020/07/18/1126-Eulerian-Path/">1126 Eulerian Path</a>
     </h1>
   
 
         
-        <a href="/2020/07/11/1112-Stucked-Keyboard/" class="archive-article-date">
-  	<time datetime="2020-07-11T06:17:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
+        <a href="/2020/07/18/1126-Eulerian-Path/" class="archive-article-date">
+  	<time datetime="2020-07-18T07:48:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>On a broken keyboard, some of the keys are always stuck. So when you type some sentences, the characters corresponding to those keys will appear repeatedly on screen for <em>k</em> times.</p>
-<p>Now given a resulting string on screen, you are supposed to list all the possible stuck keys, and the original string.</p>
-<p>Notice that there might be some characters that are typed repeatedly. The stuck key will always repeat output for a fixed <em>k</em> times whenever it is pressed. For example, when <strong><em>k</em></strong>=3, from the string <code>thiiis iiisss a teeeeeest</code> we know that the keys <code>i</code> and <code>e</code> might be stuck, but <code>s</code> is not even though it appears repeatedly sometimes. The original string could be <code>this isss a teest</code>.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>In graph theory, an Eulerian path is a path in a graph which visits every edge exactly once. Similarly, an Eulerian circuit is an Eulerian path which starts and ends on the same vertex. They were first discussed by Leonhard Euler while solving the famous Seven Bridges of Konigsberg problem in 1736. It has been proven that connected graphs with all vertices of even degree have an Eulerian circuit, and such graphs are called <strong>Eulerian</strong>. If there are exactly two vertices of odd degree, all Eulerian paths start at one of them and end at the other. A graph that has an Eulerian path but not an Eulerian circuit is called <strong>semi-Eulerian</strong>. (Cited from <a href="https://en.wikipedia.org/wiki/Eulerian_path" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Eulerian_path</a>)</p>
+<p>Given an undirected graph, you are supposed to tell if it is Eulerian, semi-Eulerian, or non-Eulerian.</p>
         
       
 
@@ -258,7 +266,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">string</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Graph</a>
         		</li>
       		
 		</ul>
@@ -268,7 +276,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/11/1112-Stucked-Keyboard/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/18/1126-Eulerian-Path/">展开 >></a>
         </p>
       
 
@@ -298,27 +306,29 @@
 
 
   
-    <article id="post-1111-Online-Map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1125-Chain-the-Ropes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1111-Online-Map/">1111 Online Map</a>
+      <a class="article-title" href="/2020/07/17/1125-Chain-the-Ropes/">1125 Chain the Ropes</a>
     </h1>
   
 
         
-        <a href="/2020/07/10/1111-Online-Map/" class="archive-article-date">
-  	<time datetime="2020-07-10T07:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/17/1125-Chain-the-Ropes/" class="archive-article-date">
+  	<time datetime="2020-07-17T06:31:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Input our current position and a destination, an online map can recommend several paths. Now your job is to recommend two paths to your user: one is the shortest, and the other is the fastest. It is guaranteed that a path exists for any request.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given some segments of rope, you are supposed to chain them into one rope. Each time you may only fold two segments into loops and chain them into one piece, as shown by the figure. The resulting chain will be treated as another segment of rope and can be folded again. After each chaining, the lengths of the original two segments will be halved.</p>
+<p><img src="https://images.ptausercontent.com/46293e57-aa0e-414b-b5c3-7c4b2d5201e2.jpg" alt="rope.jpg"></p>
+<p>Your job is to make the longest possible rope out of <em>N</em> given segments.</p>
         
       
 
@@ -334,10 +344,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Dijkstra</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -346,7 +352,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1111-Online-Map/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/17/1125-Chain-the-Ropes/">展开 >></a>
         </p>
       
 
@@ -376,27 +382,27 @@
 
 
   
-    <article id="post-1110-Complete-Binary-Tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1124-Raffle-for-Weibo-Followers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1110-Complete-Binary-Tree/">1110 Complete Binary Tree</a>
+      <a class="article-title" href="/2020/07/17/1124-Raffle-for-Weibo-Followers/">1124 Raffle for Weibo Followers</a>
     </h1>
   
 
         
-        <a href="/2020/07/10/1110-Complete-Binary-Tree/" class="archive-article-date">
-  	<time datetime="2020-07-10T07:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/17/1124-Raffle-for-Weibo-Followers/" class="archive-article-date">
+  	<time datetime="2020-07-17T06:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a tree, you are supposed to tell if it is a complete binary tree.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>John got a full mark on PAT. He was so happy that he decided to hold a raffle（抽奖） for his followers on Weibo – that is, he would select winners from every N followers who forwarded his post, and give away gifts. Now you are supposed to help him generate the list of winners.</p>
         
       
 
@@ -412,10 +418,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BST</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -424,7 +426,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1110-Complete-Binary-Tree/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/17/1124-Raffle-for-Weibo-Followers/">展开 >></a>
         </p>
       
 
@@ -454,35 +456,40 @@
 
 
   
-    <article id="post-1109-Group-Photo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1123-Is-It-a-Complete-AVL-Tree-static-linked-list" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1109-Group-Photo/">1109 Group Photo</a>
+      <a class="article-title" href="/2020/07/16/1123-Is-It-a-Complete-AVL-Tree-static-linked-list/">1123 Is It a Complete AVL Tree</a>
     </h1>
   
 
         
-        <a href="/2020/07/10/1109-Group-Photo/" class="archive-article-date">
-  	<time datetime="2020-07-10T07:39:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/16/1123-Is-It-a-Complete-AVL-Tree-static-linked-list/" class="archive-article-date">
+  	<time datetime="2020-07-16T08:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Formation is very important when taking a group photo. Given the rules of forming <strong><em>K</em></strong> rows with <strong><em>N</em></strong> people as the following:</p>
-<ul>
-<li>The number of people in each row must be <em>N</em>/<em>K</em> (round down to the nearest integer), with all the extra people (if any) standing in the last row;</li>
-<li>All the people in the rear row must be no shorter than anyone standing in the front rows;</li>
-<li>In each row, the tallest one stands at the central position (which is defined to be the position (<em>m</em>/2+1), where <em>m</em> is the total number of people in that row, and the division result must be rounded down to the nearest integer);</li>
-<li>In each row, other people must enter the row in non-increasing order of their heights, alternately taking their positions first to the right and then to the left of the tallest one (For example, given five people with their heights 190, 188, 186, 175, and 170, the final formation would be 175, 188, 190, 186, and 170. Here we assume that you are facing the group so your left-hand side is the right-hand side of the one at the central position.);</li>
-<li>When there are many people having the same height, they must be ordered in alphabetical (increasing) order of their names, and it is guaranteed that there is no duplication of names.</li>
-</ul>
-<p>Now given the information of a group of people, you are supposed to write a program to output their formation.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>An AVL tree is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property. Figures 1-4 illustrate the rotation rules.</p>
+<table>
+<thead>
+<tr>
+<th><img src="https://images.ptausercontent.com/fb337acb-93b0-4af2-9838-deff5ce98058.jpg" alt="figure 1.jpg"></th>
+<th><img src="https://images.ptausercontent.com/d1635de7-3e3f-4aaa-889b-ba29f35890db.jpg" alt="figure 2.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://images.ptausercontent.com/e868e4b9-9fea-4f70-b7a7-1f5d8a3be4ef.jpg" alt="figure 3.jpg"></td>
+<td><img src="https://images.ptausercontent.com/98aa1782-cea5-4792-8736-999436cf43a9.jpg" alt="figure 4.jpg"></td>
+</tr>
+</tbody></table>
+<p>Now given a sequence of insertions, you are supposed to output the level-order traversal sequence of the resulting AVL tree, and to tell if it is a complete binary tree.</p>
         
       
 
@@ -500,7 +507,19 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tree</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">level order</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AVL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">complete tree</a>
         		</li>
       		
 		</ul>
@@ -510,7 +529,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1109-Group-Photo/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/16/1123-Is-It-a-Complete-AVL-Tree-static-linked-list/">展开 >></a>
         </p>
       
 
@@ -540,27 +559,176 @@
 
 
   
-    <article id="post-1108-Finding-Average" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1122-Hamiltonian-Cycle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1108-Finding-Average/">1108 Finding Average</a>
+      <a class="article-title" href="/2020/07/16/1122-Hamiltonian-Cycle/">1122 Hamiltonian Cycle</a>
     </h1>
   
 
         
-        <a href="/2020/07/10/1108-Finding-Average/" class="archive-article-date">
-  	<time datetime="2020-07-10T07:13:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/16/1122-Hamiltonian-Cycle/" class="archive-article-date">
+  	<time datetime="2020-07-16T08:36:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>The basic task is simple: given <strong><em>N</em></strong> real numbers, you are supposed to calculate their average. But what makes it complicated is that some of the input numbers might not be legal. A <strong>legal</strong> input is a real number in [−1000,1000] and is accurate up to no more than 2 decimal places. When you calculate the average, those illegal numbers must not be counted in.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>The “Hamilton cycle problem” is to find a simple cycle that contains every vertex in a graph. Such a cycle is called a “Hamiltonian cycle”.</p>
+<p>In this problem, you are supposed to tell if a given cycle is a Hamiltonian cycle.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/16/1122-Hamiltonian-Cycle/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1121-Damn-Single" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/1121-Damn-Single/">1121 Damn Single</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/15/1121-Damn-Single/" class="archive-article-date">
+  	<time datetime="2020-07-15T05:25:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>“Damn Single (单身狗)” is the Chinese nickname for someone who is being single. You are supposed to find those who are alone in a big party, so they can be taken care of.</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/15/1121-Damn-Single/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-1120-Friend-Numbers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/1120-Friend-Numbers/">1120 Friend Numbers</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/15/1120-Friend-Numbers/" class="archive-article-date">
+  	<time datetime="2020-07-15T05:25:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Two integers are called “friend numbers” if they share the same sum of their digits, and the sum is their “friend ID”. For example, 123 and 51 are friend numbers since 1+2+3 = 5+1 = 6, and 6 is their friend ID. Given some numbers, you are supposed to count the number of different friend ID’s among them.</p>
         
       
 
@@ -588,7 +756,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1108-Finding-Average/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/15/1120-Friend-Numbers/">展开 >></a>
         </p>
       
 
@@ -618,29 +786,28 @@
 
 
   
-    <article id="post-1106-Lowest-Price-in-Supply-Chain-DFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1119-Pre-and-Post-order-Traversals" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1106-Lowest-Price-in-Supply-Chain-DFS/">1106 Lowest Price in Supply Chain DFS</a>
+      <a class="article-title" href="/2020/07/14/1119-Pre-and-Post-order-Traversals/">1119 Pre- and Post-order Traversals</a>
     </h1>
   
 
         
-        <a href="/2020/07/10/1106-Lowest-Price-in-Supply-Chain-DFS/" class="archive-article-date">
-  	<time datetime="2020-07-10T07:04:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/14/1119-Pre-and-Post-order-Traversals/" class="archive-article-date">
+  	<time datetime="2020-07-14T08:32:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved in moving a product from supplier to customer.</p>
-<p>Starting from one root supplier, everyone on the chain buys products from one’s supplier in a price P and sell or distribute them in a price that is r% higher than P. Only the retailers will face the customers. It is assumed that each member in the supply chain has exactly one supplier except the root supplier, and there is no supply cycle.</p>
-<p>Now given a supply chain, you are supposed to tell the lowest price a customer can expect from some retailers.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Suppose that all the keys in a binary tree are distinct positive integers. A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences, or preorder and inorder traversal sequences. However, if only the postorder and preorder traversal sequences are given, the corresponding tree may no longer be unique.</p>
+<p>Now given a pair of postorder and preorder traversal sequences, you are supposed to output the corresponding inorder traversal sequence of the tree. If the tree is not unique, simply output any one of them.</p>
         
       
 
@@ -658,7 +825,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">in order</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">pre order</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">post order</a>
         		</li>
       		
 		</ul>
@@ -668,7 +843,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1106-Lowest-Price-in-Supply-Chain-DFS/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/14/1119-Pre-and-Post-order-Traversals/">展开 >></a>
         </p>
       
 
@@ -698,27 +873,27 @@
 
 
   
-    <article id="post-1107-Social-Clusters" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1118-Birds-in-Forest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1107-Social-Clusters/">1107 Social Clusters</a>
+      <a class="article-title" href="/2020/07/14/1118-Birds-in-Forest/">1118 Birds in Forest</a>
     </h1>
   
 
         
-        <a href="/2020/07/10/1107-Social-Clusters/" class="archive-article-date">
-  	<time datetime="2020-07-10T07:01:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+        <a href="/2020/07/14/1118-Birds-in-Forest/" class="archive-article-date">
+  	<time datetime="2020-07-14T08:32:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>When register on a social network, you are always asked to specify your hobbies in order to find some potential friends with the same hobbies. A <strong>social cluster</strong> is a set of people who have some of their hobbies in common. You are supposed to find all the clusters.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Some scientists took pictures of thousands of birds in a forest. Assume that all the birds appear in the same picture belong to the same tree. You are supposed to help the scientists to count the maximum number of trees in the forest, and for any pair of birds, tell if they are on the same tree.</p>
         
       
 
@@ -746,170 +921,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1107-Social-Clusters/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1106-Lowest-Price-in-Supply-Chain-BFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/1106-Lowest-Price-in-Supply-Chain-BFS/">1106 Lowest Price in Supply Chain By BFS</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/10/1106-Lowest-Price-in-Supply-Chain-BFS/" class="archive-article-date">
-  	<time datetime="2020-07-10T06:50:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>A supply chain is a network of retailers（零售商）, distributors（经销商）, and suppliers（供应商）– everyone involved in moving a product from supplier to customer.</p>
-<p>Starting from one root supplier, everyone on the chain buys products from one’s supplier in a price P and sell or distribute them in a price that is r% higher than P. Only the retailers will face the customers. It is assumed that each member in the supply chain has exactly one supplier except the root supplier, and there is no supply cycle.</p>
-<p>Now given a supply chain, you are supposed to tell the lowest price a customer can expect from some retailers.</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/1106-Lowest-Price-in-Supply-Chain-BFS/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1105-Spiral-Matrix" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/04/1105-Spiral-Matrix/">1105 Spiral Matrix</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/04/1105-Spiral-Matrix/" class="archive-article-date">
-  	<time datetime="2020-07-04T12:40:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>This time your job is to fill a sequence of <em>N</em> positive integers into a spiral matrix in <strong>non-increasing</strong> order. A spiral matrix is filled in from the first element at the upper-left corner, then move in a clockwise spiral. The matrix has <em>m</em> rows and <em>n</em> columns, where <em>m</em> and <em>n</em> satisfy the following: </p>
-<ul>
-<li>$m\times n$ must be equal to $N$; </li>
-<li>$m\ge n$; </li>
-<li>and <em>m</em>−<em>n</em> is the minimum of all the possible values.</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">simulation</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/04/1105-Spiral-Matrix/">展开 >></a>
+          <a class="article-more-a" href="/2020/07/14/1118-Birds-in-Forest/">展开 >></a>
         </p>
       
 
@@ -941,7 +953,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next »</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next »</a>
     </nav>
   
 
@@ -1061,6 +1073,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sort</a>
               </li>
              
@@ -1073,23 +1093,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Quick Sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">level order</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">in order</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Quick Sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1101,15 +1117,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BST</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Dijkstra</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">string</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BST</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">pre order</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">post order</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AVL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">complete tree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
             
             <div class="clearfix"></div>
