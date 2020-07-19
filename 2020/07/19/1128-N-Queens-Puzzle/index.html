@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>1104 Sum of Number Segments | </title>
+  <title>1128 N Queens Puzzle | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="QuestionGiven a sequence of positive numbers, a segment is defined to be a consecutive subsequence. For example, given the sequence { 0.1, 0.2, 0.3, 0.4 }, we have 10 segments: (0.1) (0.1, 0.2) (0.1,">
+  <meta name="description" content="QuestionThe “eight queens puzzle” is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other. Thus, a solution requires that no two queens share the sa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1104 Sum of Number Segments">
-<meta property="og:url" content="http://yoursite.com/2020/07/02/1104-Sum-of-Number-Segments/index.html">
+<meta property="og:title" content="1128 N Queens Puzzle">
+<meta property="og:url" content="http://yoursite.com/2020/07/19/1128-N-Queens-Puzzle/index.html">
 <meta property="og:site_name" content="">
-<meta property="og:description" content="QuestionGiven a sequence of positive numbers, a segment is defined to be a consecutive subsequence. For example, given the sequence { 0.1, 0.2, 0.3, 0.4 }, we have 10 segments: (0.1) (0.1, 0.2) (0.1,">
+<meta property="og:description" content="QuestionThe “eight queens puzzle” is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other. Thus, a solution requires that no two queens share the sa">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-02T04:13:28.000Z">
-<meta property="article:modified_time" content="2020-07-11T06:18:51.687Z">
+<meta property="og:image" content="https://images.ptausercontent.com/7d0443cf-5c19-4494-98a6-0f0f54894eaa.jpg">
+<meta property="og:image" content="https://images.ptausercontent.com/d187e37a-4eb8-4215-8e2c-040a73c5c8d8.jpg">
+<meta property="article:published_time" content="2020-07-19T08:57:35.000Z">
+<meta property="article:modified_time" content="2020-07-19T09:10:26.129Z">
 <meta property="article:author" content="北边无人">
 <meta property="article:tag" content="PAT">
-<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.ptausercontent.com/7d0443cf-5c19-4494-98a6-0f0f54894eaa.jpg">
   
     <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -144,50 +146,54 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1104-Sum-of-Number-Segments" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1128-N-Queens-Puzzle" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      1104 Sum of Number Segments
+      1128 N Queens Puzzle
     </h1>
   
 
         
-        <a href="/2020/07/02/1104-Sum-of-Number-Segments/" class="archive-article-date">
-  	<time datetime="2020-07-02T04:13:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
+        <a href="/2020/07/19/1128-N-Queens-Puzzle/" class="archive-article-date">
+  	<time datetime="2020-07-19T08:57:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a sequence of positive numbers, a segment is defined to be a consecutive subsequence. For example, given the sequence { 0.1, 0.2, 0.3, 0.4 }, we have 10 segments: (0.1) (0.1, 0.2) (0.1, 0.2, 0.3) (0.1, 0.2, 0.3, 0.4) (0.2) (0.2, 0.3) (0.2, 0.3, 0.4) (0.3) (0.3, 0.4) and (0.4).</p>
-<p>Now given a sequence, you are supposed to find the sum of all the numbers in all the segments. For the previous example, the sum of all the 10 segments is 0.1 + 0.3 + 0.6 + 1.0 + 0.2 + 0.5 + 0.9 + 0.3 + 0.7 + 0.4 = 5.0.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>The “eight queens puzzle” is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other. Thus, a solution requires that no two queens share the same row, column, or diagonal. The eight queens puzzle is an example of the more general <em>N</em> queens problem of placing <em>N</em> non-attacking queens on an <em>N</em>×<em>N</em> chessboard. (From Wikipedia - “Eight queens puzzle”.)</p>
+<p>Here you are NOT asked to solve the puzzles. Instead, you are supposed to judge whether or not a given configuration of the chessboard is a solution. To simplify the representation of a chessboard, let us assume that no two queens will be placed in the same column. Then a configuration can be represented by a simple integer sequence ($Q_1,Q_2,\dots,Q_N$), where $\rm Q_\rm i$ is the row number of the queen in the i-th column. For example, Figure 1 can be represented by (4, 6, 8, 2, 7, 1, 3, 5) and it is indeed a solution to the 8 queens puzzle; while Figure 2 can be represented by (4, 6, 7, 2, 8, 1, 9, 5, 3) and is NOT a 9 queens’ solution.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://images.ptausercontent.com/7d0443cf-5c19-4494-98a6-0f0f54894eaa.jpg" alt="8q.jpg"></th>
+<th></th>
+<th align="center"><img src="https://images.ptausercontent.com/d187e37a-4eb8-4215-8e2c-040a73c5c8d8.jpg" alt="9q.jpg"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Figure 1</td>
+<td></td>
+<td align="center">Figure 2</td>
+</tr>
+</tbody></table>
 <a id="more"></a>
 
-<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification"></a>Input Specification</h2><p>Each input file contains one test case. For each case, the first line gives a positive integer $N$, the size of the sequence which is no more than $ 10^5 $. The next line contains $N$ positive numbers in the sequence, each no more than 1.0, separated by a space.</p>
-<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification"></a>Output Specification</h2><p>For each test case, print in one line the sum of all the numbers in all the segments, accurate up to 2 decimal places.</p>
-<h2 id="Sample-Input-amp-Output"><a href="#Sample-Input-amp-Output" class="headerlink" title="Sample Input &amp; Output"></a>Sample Input &amp; Output</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sample input</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">0.1</span> <span class="number">0.2</span> <span class="number">0.3</span> <span class="number">0.4</span></span><br><span class="line"><span class="comment">// sample output</span></span><br><span class="line"><span class="number">5.00</span></span><br></pre></td></tr></table></figure>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification"></a>Input Specification</h2><p>Each input file contains several test cases. The first line gives an integer <em>K</em> (1&lt;<em>K</em>≤200). Then <em>K</em> lines follow, each gives a configuration in the format </p>
+<blockquote>
+<p>$\rm N \quad \rm Q_\rm 1 \quad \rm Q_\rm 2 \quad \dots \quad Q_N$ </p>
+</blockquote>
+<p>where $4\le \rm N \le 1000$ and it is guaranteed that 1≤$\rm Q_\rm i$≤ $\textrm N$ for all <em>i</em>=1, ⋯, <em>N</em>. The numbers are separated by spaces.</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification"></a>Output Specification</h2><p>For each configuration, if it is a solution to the <em>N</em> queens problem, print <code>YES</code> in a line; or <code>NO</code> if not.</p>
+<h2 id="Sample-Input-amp-Output"><a href="#Sample-Input-amp-Output" class="headerlink" title="Sample Input &amp; Output"></a>Sample Input &amp; Output</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sample input</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">8</span> <span class="number">4</span> <span class="number">6</span> <span class="number">8</span> <span class="number">2</span> <span class="number">7</span> <span class="number">1</span> <span class="number">3</span> <span class="number">5</span></span><br><span class="line"><span class="number">9</span> <span class="number">4</span> <span class="number">6</span> <span class="number">7</span> <span class="number">2</span> <span class="number">8</span> <span class="number">1</span> <span class="number">9</span> <span class="number">5</span> <span class="number">3</span></span><br><span class="line"><span class="number">6</span> <span class="number">1</span> <span class="number">5</span> <span class="number">2</span> <span class="number">6</span> <span class="number">4</span> <span class="number">3</span></span><br><span class="line"><span class="number">5</span> <span class="number">1</span> <span class="number">3</span> <span class="number">5</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="comment">// sample output</span></span><br><span class="line">YES</span><br><span class="line">NO</span><br><span class="line">NO</span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
 
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>拿到题没看到输入数量级有 $10^5$ ，于是先暴力解一遍，时间复杂度为 $O(n^2) $。结果在意料之中，超时了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100001</span>;</span><br><span class="line"><span class="keyword">double</span> sum[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="keyword">double</span> temp, ans = <span class="number">0</span>; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;temp);</span><br><span class="line">        sum[i] = sum[i<span class="number">-1</span>] + temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> len = <span class="number">1</span>; len &lt;= n; len++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + len - <span class="number">1</span> &lt;= n; i++) &#123;</span><br><span class="line">            ans += sum[i+len<span class="number">-1</span>] - sum[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;memory.h&gt;</span></span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">bool</span> rows[MAXN], dia1[<span class="number">2</span> * MAXN - <span class="number">1</span>], dia2[<span class="number">2</span> * MAXN - <span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, n, flag; i &lt; k; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); flag = <span class="literal">true</span>;</span><br><span class="line">		<span class="built_in">memset</span>(rows, <span class="number">0</span>, <span class="keyword">sizeof</span>(rows));</span><br><span class="line">		<span class="built_in">memset</span>(dia1, <span class="number">0</span>, <span class="keyword">sizeof</span>(dia1));</span><br><span class="line">		<span class="built_in">memset</span>(dia2, <span class="number">0</span>, <span class="keyword">sizeof</span>(dia2));</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> col = <span class="number">1</span>, row; col &lt;= n; col++) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;row);</span><br><span class="line">			<span class="keyword">if</span>(rows[row<span class="number">-1</span>] || dia1[n + col - row - <span class="number">1</span>] || dia2[col + row - <span class="number">2</span>])</span><br><span class="line">				flag = <span class="literal">false</span>;</span><br><span class="line">			rows[row<span class="number">-1</span>] = dia1[n + col - row - <span class="number">1</span>] = dia2[col + row - <span class="number">2</span>] = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, flag ? <span class="string">"YES"</span>:<span class="string">"NO"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>然后仔细想想，每项数字在最后的和里出现的次数都是有规律的，比如：</p>
-<ul>
-<li>在长度为 1 的连续字串中，每一项数字出现的次数都是 1；</li>
-<li>在长度为 2 的连续字串中，除了第一项，及最后一项出现次数只有 1 外，其他的项出现的次数都是 2；</li>
-<li>在长度为 3 的连续字串中，除了第一项，及最后一项出现次数为 1，第二项及倒数第二项出现次数为 2 外，其他的项出现次数都是 3；</li>
-<li>……</li>
-</ul>
-<p>然后我就写了下如下程序来计算每项数据出现的次数（n为总项数，可自定义）。把注释符号去掉可以同时输出每个长度的所有连续字串。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; count;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> len = <span class="number">1</span>; len &lt;= n; len++) &#123;</span><br><span class="line">        <span class="comment">//printf("length = %d\n", len);</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + len - <span class="number">1</span> &lt;= n; i++) &#123;</span><br><span class="line">            <span class="comment">//for(int temp = 1; temp &lt; i; temp++) printf("  ");</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= i + len - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="comment">//printf("%d ", j);</span></span><br><span class="line">                count[j]++;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//printf("\n");</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//printf("\n");</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv:count) <span class="built_in">printf</span>(<span class="string">"%d: %d, guess: %d\n"</span>, kv.first, kv.second, kv.first * (n - kv.first + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后得出结果，每一项数字在最后的和中，出现的次数为：<br>$$<br>\text{出现次数} = \text{项编号} \times (\text{总项数} - \text{项编号} + 1)<br>$$</p>
-<p>但是，由于大量浮点数相加（或者整数乘以浮点数）会产生可观的误差，详情见<a href="https://blog.zhengrh.com/post/about-double/" target="_blank" rel="noopener">此处</a>，最终导致测试点2无法通过。因此，在C++中我们想要避免由浮点数引入的误差，最简单的想法就是把它变成整数。由此得到如下AC代码，但是此代码不能在严格意义上称为AC代码，只有在所有输入小数的小数位均不超过三位情况下（如：0.111、0.21等），才能AC。这是由于代码将输入乘了1000再相加，最后再除以了1000，所以如果小数位超过三位则三位后的位会被忽略，最终引入更大的误差。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> MAXN = <span class="number">100001</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n; <span class="keyword">double</span> temp = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0L</span>L;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lf"</span>, &amp;temp);</span><br><span class="line">		ans += (<span class="keyword">long</span> <span class="keyword">long</span>) (<span class="number">1000</span> * temp) * i * (n - i + <span class="number">1</span>); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, ans / <span class="number">1000.0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -202,10 +208,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">math</a>
         		</li>
       		
 		</ul>
@@ -261,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/02/1104-Sum-of-Number-Segments/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/1128-N-Queens-Puzzle/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +277,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/04/1103-Integer-Factorization/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/19/1129-Recommendation-System/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          1103 Integer Factorization
+          1129 Recommendation System
         
       </div>
     </a>
   
   
-    <a href="/2020/07/01/1102-Invert-a-Binary-Tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">1102 Invert a Binary Tree</div>
+    <a href="/2020/07/18/1127-ZigZagging-on-a-Tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1127 Zigzagging on a Tree</div>
       <i class="icon-circle-right"></i>
     </a>
   
